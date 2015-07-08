@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Container.Row" >
+
+    <ImageView
+        android:id="@+id/cover"
+        style="@style/CoverArt.Small"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/cover_art_content_desc" />
+
+    <TextView
+        android:id="@+id/duration"
+        style="@style/Text.Time.Small"
+        android:layout_alignBaseline="@+id/cover"
+        android:layout_below="@+id/cover"/>
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/Text.Subtitle.Small"
+        android:layout_alignTop="@+id/cover"
+        android:layout_toRightOf="@+id/cover" />
+
+    <TextView
+        android:id="@+id/artist"
+        style="@style/Text.Subtitle.Small"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/cover" />
+
+    <TextView
+        android:id="@+id/album"
+        style="@style/Text.Subtitle.Small"
+        android:layout_below="@+id/artist"
+        android:layout_toRightOf="@+id/cover" />
+
+    <TextView
+        android:id="@+id/year"
+        style="@style/Text.Subtitle.Small"
+        android:layout_below="@+id/album"
+        android:layout_toRightOf="@+id/cover" />
+
+</RelativeLayout>

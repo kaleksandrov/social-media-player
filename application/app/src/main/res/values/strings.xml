@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Fair Player</string>
+    
+    <string name="button_play_title">Play</string>
+    <string name="button_pause_title">Pause</string>
+    <string name="button_stop_title">Stop</string>
+    <string name="button_previous_title">Previous</string>
+    <string name="button_next_title">Next</string>
+    <string name="button_shuffle_title">Shuffle</string>
+    <string name="button_repeat_title">Repeat</string>
+    
+    <string name="cover_art_content_desc">Cover art</string>
+    
+    <string name="state_paused">Paused</string>
+    <string name="state_playing">Playing</string>
+    
+    <string name="state_on">On</string>
+    <string name="state_off">Off</string>
+    
+    <string name="title_playlist">Playlist</string>
+    <string name="title_activity_playlist_manager">PlaylistManagerActivity</string>
+
+    <!--==============================-->
+    <!--      Media library           -->
+    <!--==============================-->
+
+    <string name="library_title">Media Library</string>
+
+    <!--Tabs-->
+    <string name="tab_title_albums">Albums</string>
+    <string name="tab_title_artists">Artists</string>
+    <string name="tab_title_songs">Songs</string>
+
+    <!--==============================-->
+    <!--      Now playing             -->
+    <!--==============================-->
+
+    <string name="share_title">Share with...</string>
+    <string name="share_subject">Listening to</string>
+    <string name="share_text_default">Using the awesome Social Media Player. Have you tried it? You can do this at https://blabla.com!</string>
+    <string name="share_text">Listening to \"%1$s\" from %2$s using Social Media Player.</string>
+
+</resources>

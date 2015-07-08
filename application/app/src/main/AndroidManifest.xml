@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kaleksandrov.smp"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="22" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <android:uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name="com.kaleksandrov.smp.application.FairPlayerApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.kaleksandrov.smp.ui.activity.SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.kaleksandrov.smp.service.PlayerServiceImpl"
+            android:exported="false" />
+
+        <receiver android:name="com.kaleksandrov.smp.receiver.NoisyAudioReceiver">
+            <intent-filter>
+                <action android:name="android.media.AUDIO_BECOMING_NOISY" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.kaleksandrov.smp.receiver.RemoteControlReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.kaleksandrov.smp.ui.activity.LibraryActivity"
+            android:label="@string/title_activity_playlist_manager"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.kaleksandrov.smp.ui.activity.ArtistDetailsActivity"
+            android:label="test_activity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="com.kaleksandrov.smp.ui.activity.AlbumDetailsActivity"
+            android:label="test_activity"
+            android:screenOrientation="portrait"></activity>
+
+        <activity
+            android:name="com.kaleksandrov.smp.ui.activity.PlayerActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
+    </application>
+
+</manifest>

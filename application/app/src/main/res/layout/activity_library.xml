@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/view_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:layout_alignParentTop="true" />
+
+    <com.astuetz.PagerSlidingTabStrip
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="48dip"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/primary"
+        android:elevation="10dp"
+        android:textColor="#FFFFFF"
+        local:pstsDividerColor="@color/primary"
+        local:pstsIndicatorColor="#FFFFFF"
+        local:pstsIndicatorHeight="2dp"
+        local:pstsShouldExpand="true"
+        local:pstsTextAllCaps="true"
+        local:pstsUnderlineHeight="0dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/footer"
+        android:layout_below="@+id/tabs">
+
+    </android.support.v4.view.ViewPager>
+
+    <com.getbase.floatingactionbutton.FloatingActionButton
+        android:id="@+id/play_all"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        auto:fab_icon="@drawable/ic_action_play"
+        auto:fab_colorNormal="@color/primary"
+        auto:fab_colorPressed="@color/primary_dark"
+        android:layout_above="@+id/footer"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"/>
+
+    <com.kaleksandrov.smp.ui.view.NowPlayingBar
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:elevation="10dp" />
+
+</RelativeLayout>

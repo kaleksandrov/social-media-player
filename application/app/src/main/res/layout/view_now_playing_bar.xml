@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="20dp"
+    android:background="@color/primary">
+
+    <ImageView
+        android:id="@+id/cover"
+        android:layout_width="?attr/actionBarSize"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+
+        android:src="@drawable/no_cover_art" />
+
+    <TextView
+        android:id="@+id/song"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_toLeftOf="@+id/previous"
+        android:layout_toRightOf="@+id/cover"
+        android:lines="1"
+        android:singleLine="true"
+        android:textColor="@color/primary_light" />
+
+    <TextView
+        android:id="@+id/artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/song"
+        android:layout_marginBottom="6dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_toLeftOf="@+id/previous"
+        android:layout_toRightOf="@+id/cover"
+        android:lines="1"
+        android:singleLine="true"
+        android:textColor="@color/primary_light" />
+
+    <ImageButton
+        android:id="@+id/previous"
+        style="@style/Button.Previous"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/toggle" />
+
+    <com.kaleksandrov.smp.ui.view.StateButton
+        android:id="@+id/toggle"
+        style="@style/Button.Play"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/next" />
+
+    <ImageButton
+        android:id="@+id/next"
+        style="@style/Button.Next"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

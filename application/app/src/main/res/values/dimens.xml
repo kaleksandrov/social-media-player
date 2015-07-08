@@ -1,0 +1,35 @@
+<resources>
+
+    <!-- TODO [kaleksandrov] These are a test margins -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_drawer_width">260dp</dimen>
+
+    <!-- Container -->
+    <dimen name="general_view_margin">1dp</dimen>
+    <dimen name="general_inner_container_padding">15dp</dimen>
+
+    <!-- Text -->
+
+    <dimen name="large_text_size">20sp</dimen>
+    <dimen name="normal_text_size">13sp</dimen>
+    <dimen name="small_text_size">11sp</dimen>
+
+    <!-- SeekBar -->
+
+    <dimen name="seekbar_background_border">2dp</dimen>
+    <dimen name="seekbar_padding">0dp</dimen>
+
+    <!-- Playlist row -->
+
+    <dimen name="playlist_row_height">80dp</dimen>
+
+    <!-- Cover art -->
+
+    <dimen name="cover_art_size_small">64dp</dimen>
+
+    <!-- Drawer width -->
+
+    <dimen name="drawer_width">300dp</dimen>
+
+</resources>

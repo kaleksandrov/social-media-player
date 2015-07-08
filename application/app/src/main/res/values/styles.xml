@@ -1,0 +1,171 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <item name="android:divider">@color/divider</item>
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <!-- Splash theme. -->
+    <style name="SplashTheme" parent="AppBaseTheme">
+
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="Toolbar" parent="AppBaseTheme">
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#FFFFFF</item>
+    </style>
+
+    <!-- Container -->
+
+    <style name="Container">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/background</item>
+    </style>
+
+    <style name="Container.Main"></style>
+
+    <style name="Container.Inner">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/inner_container_background</item>
+        <item name="android:padding">@dimen/general_inner_container_padding</item>
+    </style>
+
+    <style name="Container.Row">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@color/inner_container_background</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="Container.Inner.Inner">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:padding">0dp</item>
+    </style>
+
+    <style name="Container.Playlist">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">#393939</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <!-- Text -->
+
+    <style name="Text" parent="@android:style/TextAppearance.Medium">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/general_view_margin</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:lines">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Text.Title">
+        <item name="android:textSize">@dimen/large_text_size</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <style name="Text.Title.Small">
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Subtitle">
+        <item name="android:textSize">@dimen/normal_text_size</item>
+    </style>
+
+    <style name="Text.Subtitle.Small">
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+    <style name="Text.Time">
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+    <style name="Text.Time.Small">
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+    <!-- Image -->
+
+    <style name="CoverArt">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:src">@drawable/no_cover</item>
+        <item name="android:layout_margin">@dimen/general_view_margin</item>
+    </style>
+
+    <style name="CoverArt.Small">
+        <item name="android:layout_width">@dimen/cover_art_size_small</item>
+        <item name="android:layout_height">@dimen/cover_art_size_small</item>
+    </style>
+
+    <style name="Pager">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginTop">@dimen/general_view_margin</item>
+        <item name="android:layout_marginBottom">@dimen/general_view_margin</item>
+        <item name="android:background">@color/background</item>
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/general_view_margin</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <style name="Button.Play">
+        <item name="android:src">@drawable/ic_action_play</item>
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">64dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="Button.Pause">
+        <item name="android:src">@drawable/ic_action_pause</item>
+    </style>
+
+    <style name="Button.Stop">
+        <item name="android:src">@drawable/ic_action_stop</item>
+    </style>
+
+    <style name="Button.Next">
+        <item name="android:src">@drawable/ic_action_next</item>
+    </style>
+
+    <style name="Button.Previous">
+        <item name="android:src">@drawable/ic_action_previous</item>
+    </style>
+
+    <style name="Button.Repeat">
+        <item name="android:src">@drawable/ic_action_repeat</item>
+    </style>
+
+    <style name="Button.Shuffle">
+        <item name="android:src">@drawable/ic_action_shuffle</item>
+    </style>
+
+    <!-- Drawer -->
+
+    <style name="Drawer">
+        <item name="android:layout_width">360dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">left</item>
+    </style>
+
+</resources>

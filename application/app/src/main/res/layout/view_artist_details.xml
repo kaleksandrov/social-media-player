@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/cover"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="left"
+        android:scaleType="fitCenter"
+        android:src="@drawable/no_cover" />
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="25dp">
+
+        <TextView
+            android:id="@+id/label_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/label_year"
+            android:text="Duration:" />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/label_duration"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/label_duration"
+            android:lines="1"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/label_trackCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/label_duration"
+            android:text="Track count:" />
+
+        <TextView
+            android:id="@+id/trackCount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/label_trackCount"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/label_trackCount"
+            android:lines="1"
+            android:singleLine="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>
