@@ -168,4 +168,19 @@
         <item name="android:layout_gravity">left</item>
     </style>
 
+    <!--Tabs-->
+
+    <style name="TabLayout.Main" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">#FFFFFF</item>
+        <item name="tabSelectedTextColor">#FFFFFF</item>
+        <item name="tabTextAppearance">@style/TabLayout.Main.Tab</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">@color/primary</item>
+    </style>
+
+    <style name="TabLayout.Main.Tab" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/divider</item>
+    </style>
+
 </resources>

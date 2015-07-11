@@ -2,6 +2,7 @@ package com.kaleksandrov.smp.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -10,7 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.astuetz.PagerSlidingTabStrip;
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.kaleksandrov.smp.R;
 import com.kaleksandrov.smp.application.FairPlayerApplication;
 import com.kaleksandrov.smp.content.Content;
@@ -29,7 +30,6 @@ import com.kaleksandrov.smp.ui.fragment.ArtistsFragment;
 import com.kaleksandrov.smp.ui.fragment.SongsAdapter;
 import com.kaleksandrov.smp.ui.fragment.SongsFragment;
 import com.kaleksandrov.smp.ui.view.NowPlayingBar;
-import com.getbase.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,8 +46,8 @@ public class LibraryActivity extends AppCompatActivity implements AbsLibraryAdap
     private MediaPlayerClient mPlayer;
     private PlaylistManager mPlaylistManager;
     private Content mContent;
-    private PagerSlidingTabStrip mTabs;
     private FloatingActionButton mPlayAllButton;
+    private TabLayout mTabsNew;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +67,8 @@ public class LibraryActivity extends AppCompatActivity implements AbsLibraryAdap
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         // Bind the tabs to the ViewPager
-        mTabs = (PagerSlidingTabStrip) findViewById(R.id.tabs);
-        mTabs.setViewPager(mViewPager);
+        mTabsNew = (TabLayout) findViewById(R.id.tabsNew);
+        mTabsNew.setupWithViewPager(mViewPager);
 
         mNowPlayingBar = (NowPlayingBar) findViewById(R.id.footer);
         mPlayer = new MediaPlayerClient(this);
