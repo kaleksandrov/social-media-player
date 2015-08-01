@@ -1,30 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:auto="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <include
-        layout="@layout/view_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?android:actionBarSize"
-        android:layout_alignParentTop="true" />
+    android:layout_height="match_parent">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/footer"
-        android:layout_below="@+id/toolbar"
         android:divider="@android:color/transparent"
         android:dividerHeight="16dp"
         android:fastScrollEnabled="true"
         android:scrollbars="vertical"
-        android:smoothScrollbar="true" />
+        android:smoothScrollbar="true"
+        auto:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="288dp"
+        android:elevation="10dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            auto:contentScrim="?attr/colorPrimary"
+            auto:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:id="@+id/coverArtHeader"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/no_cover_art"
+                android:scaleType="centerCrop"
+                auto:layout_collapseParallaxMultiplier="0.7" />
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:actionBarSize"
+                auto:layout_collapseMode="pin" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
 
     <com.kaleksandrov.smp.ui.view.NowPlayingBar
         android:id="@+id/footer"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom" />
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

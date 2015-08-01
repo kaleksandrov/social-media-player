@@ -4,6 +4,7 @@ import android.util.SparseArray;
 
 import com.kaleksandrov.smp.model.Album;
 import com.kaleksandrov.smp.model.Artist;
+import com.kaleksandrov.smp.model.Model;
 import com.kaleksandrov.smp.model.Song;
 
 import java.util.ArrayList;
@@ -50,7 +51,7 @@ public class Content {
         return Collections.unmodifiableList(toList(mAlbums));
     }
 
-    private static <T> List<T> toList(SparseArray<T> original) {
+    private static <T extends Model> List<T> toList(SparseArray<T> original) {
         if (original == null) {
             return null;
         }
@@ -63,6 +64,8 @@ public class Content {
         for (int i = 0; i < original.size(); i++) {
             result.add(original.valueAt(i));
         }
+
+        Collections.sort(result);
 
         return result;
     }

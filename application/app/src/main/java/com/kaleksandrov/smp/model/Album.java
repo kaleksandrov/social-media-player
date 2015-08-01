@@ -49,4 +49,5 @@ public class Album extends Model {
     public String getCoverPath() {
         return mCoverPath;
     }
+
 }

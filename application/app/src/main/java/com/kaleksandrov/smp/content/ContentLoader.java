@@ -62,9 +62,6 @@ public class ContentLoader {
     public Content loadContent() {
         SparseArray<String> covers = loadAlbums();
 
-        List<Media> mediaList = new ArrayList<>();
-
-        // TODO [kaleksandrov] order by artistId, albumId, songId
         Cursor cursor = mContext.getContentResolver().query(
                 MEDIA_URI,
                 MEDIA_COLUMNS,

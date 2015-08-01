@@ -2,6 +2,7 @@ package com.kaleksandrov.smp.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,7 +12,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.kaleksandrov.smp.R;
 import com.kaleksandrov.smp.application.FairPlayerApplication;
 import com.kaleksandrov.smp.content.Content;
@@ -20,7 +20,6 @@ import com.kaleksandrov.smp.model.Artist;
 import com.kaleksandrov.smp.model.Song;
 import com.kaleksandrov.smp.player.MediaList;
 import com.kaleksandrov.smp.player.PlaylistManager;
-import com.kaleksandrov.smp.service.PlayerService;
 import com.kaleksandrov.smp.ui.fragment.AbsLibraryAdapter;
 import com.kaleksandrov.smp.ui.fragment.AbsRecyclerViewFragment;
 import com.kaleksandrov.smp.ui.fragment.AlbumsAdapter;
@@ -33,10 +32,8 @@ import com.kaleksandrov.smp.ui.view.NowPlayingBar;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
 
-public class LibraryActivity extends AppCompatActivity implements AbsLibraryAdapter.OnItemClickListener, Observer {
+public class LibraryActivity extends AppCompatActivity implements AbsLibraryAdapter.OnItemClickListener {
 
     private static final String LOG_TAG = LibraryActivity.class.getSimpleName();
     private Toolbar mToolbar;
@@ -72,7 +69,6 @@ public class LibraryActivity extends AppCompatActivity implements AbsLibraryAdap
 
         mNowPlayingBar = (NowPlayingBar) findViewById(R.id.footer);
         mPlayer = new MediaPlayerClient(this);
-        mPlayer.addObserver(this);
         mNowPlayingBar.setMediaPlayerClient(mPlayer);
         mNowPlayingBar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,22 +143,6 @@ public class LibraryActivity extends AppCompatActivity implements AbsLibraryAdap
         }
 
         startActivity(intent);
-    }
-
-    @Override
-    public void update(Observable observable, Object data) {
-        if (!(data instanceof PlayerService.State)) {
-            return;
-        }
-
-        PlayerService.State state = (PlayerService.State) data;
-
-        Song song = state.getSong();
-        if (song == null) {
-            mPlayAllButton.setVisibility(View.VISIBLE);
-        } else {
-            mPlayAllButton.setVisibility(View.GONE);
-        }
     }
 
     /**

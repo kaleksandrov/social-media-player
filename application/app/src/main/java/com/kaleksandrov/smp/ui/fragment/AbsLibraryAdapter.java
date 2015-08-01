@@ -9,14 +9,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.kaleksandrov.smp.R;
+import com.kaleksandrov.smp.model.Model;
 
 import java.lang.ref.WeakReference;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by kaleksandrov on 4/29/15.
  */
-public abstract class AbsLibraryAdapter<T, V extends AbsLibraryAdapter.ViewHolder> extends RecyclerView.Adapter<V> {
+public abstract class AbsLibraryAdapter<T extends Model, V extends AbsLibraryAdapter.ViewHolder> extends RecyclerView.Adapter<V> {
 
     public interface OnItemClickListener {
         void onItemClick(View view, Object item);

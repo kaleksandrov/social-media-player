@@ -1,15 +1,17 @@
 package com.kaleksandrov.smp.model;
 
+import com.kaleksandrov.smp.util.StringUtils;
+
 /**
  * Created by kaleksandrov on 4/25/15.
  */
-public class Model {
+public class Model implements Comparable<Model> {
     private int mId;
-    private String mTitle;
+    private String mName;
 
-    public Model(int id, String title) {
+    public Model(int id, String name) {
         this.mId = id;
-        this.mTitle = title;
+        this.mName = name;
     }
 
     public int getId() {
@@ -17,6 +19,19 @@ public class Model {
     }
 
     public String getName() {
-        return mTitle;
+        return mName;
+    }
+
+    @Override
+    public int compareTo(Model another) {
+        if (StringUtils.isEmpty(this.mName)) {
+            return -1;
+        }
+
+        if (StringUtils.isEmpty(another.mName)) {
+            return 1;
+        }
+
+        return this.mName.compareTo(another.mName);
     }
 }

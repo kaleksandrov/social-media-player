@@ -30,4 +30,5 @@ public class Artist extends Model {
     public int getDuration() {
         return mDuration;
     }
+
 }

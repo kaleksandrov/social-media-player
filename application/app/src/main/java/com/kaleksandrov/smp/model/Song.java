@@ -5,7 +5,7 @@ import android.net.Uri;
 /**
  * Created by kaleksandrov on 5/4/15.
  */
-public class Song extends Model implements Comparable<Song> {
+public class Song extends Model {
 
     private Album mAlbum;
     private int mDuration;
@@ -44,11 +44,11 @@ public class Song extends Model implements Comparable<Song> {
     }
 
     @Override
-    public int compareTo(Song that) {
-        if (this == that) {
-            return 0;
+    public int compareTo(Model another) {
+        if (another instanceof Song) {
+            return this.getUri().compareTo(((Song) another).getUri());
+        } else {
+            return super.compareTo(another);
         }
-
-        return this.getUri().compareTo(that.getUri());
     }
 }
