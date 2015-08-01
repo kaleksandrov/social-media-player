@@ -43,10 +43,9 @@ public class ArtistDetailsActivity extends AbsDetailsActivity {
     }
 
     @Override
-    protected AbsDetailsHeaderAdapter getAdapter() {
+    protected AbsDetailsAdapter getAdapter() {
         ArtistDetailsAdapter adapter = new ArtistDetailsAdapter(this, mArtist);
         adapter.setOnItemClickListener(this);
-        adapter.setOnHeaderClickListener(this);
         return adapter;
     }
 
@@ -61,12 +60,7 @@ public class ArtistDetailsActivity extends AbsDetailsActivity {
     }
 
     @Override
-    public void onPlayAllClick(View view) {
+    protected void onPlayClick() {
         startPlayerActivity(mArtist.getSongs(), false);
-    }
-
-    @Override
-    public void onShuffleAllClick(View view) {
-        startPlayerActivity(mArtist.getSongs(), true);
     }
 }

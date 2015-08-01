@@ -10,6 +10,8 @@
         <item name="android:textColorPrimary">@color/primary_text</item>
         <item name="android:textColorSecondary">@color/secondary_text</item>
         <item name="android:divider">@color/divider</item>
+
+        <!--<item name="windowActionModeOverlay">true</item>-->
     </style>
 
     <!-- Application theme. -->
@@ -74,19 +76,20 @@
         <item name="android:singleLine">true</item>
     </style>
 
-    <style name="Text.Title">
-        <item name="android:textSize">@dimen/large_text_size</item>
-        <item name="android:textStyle">bold</item>
+    <!--<style name="Text.Title">-->
+        <!--<item name="android:textSize">@dimen/large_text_size</item>-->
+        <!--<item name="android:textStyle">bold</item>-->
+    <!--</style>-->
 
-    </style>
-
-    <style name="Text.Title.Small">
-        <item name="android:textSize">@dimen/small_text_size</item>
-        <item name="android:textStyle">bold</item>
-    </style>
+    <!--<style name="Text.Title.Small">-->
+        <!--<item name="android:textSize">@dimen/small_text_size</item>-->
+        <!--<item name="android:textStyle">bold</item>-->
+    <!--</style>-->
 
     <style name="Text.Subtitle">
         <item name="android:textSize">@dimen/normal_text_size</item>
+        <item name="android:textColor">#FF0000</item>
+        <item name="android:color">#FF0000</item>
     </style>
 
     <style name="Text.Subtitle.Small">

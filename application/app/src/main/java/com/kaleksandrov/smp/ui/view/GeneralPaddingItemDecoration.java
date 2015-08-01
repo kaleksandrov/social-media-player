@@ -2,6 +2,7 @@ package com.kaleksandrov.smp.ui.view;
 
 import android.content.Context;
 import android.graphics.Rect;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -13,7 +14,7 @@ import java.lang.ref.WeakReference;
 public class GeneralPaddingItemDecoration extends RecyclerView.ItemDecoration {
 
     private static final int PADDING_DP = 8;
-    private final WeakReference<Context> mContextRef;
+    protected final WeakReference<Context> mContextRef;
 
     public GeneralPaddingItemDecoration(Context context) {
         mContextRef = new WeakReference<>(context);

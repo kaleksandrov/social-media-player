@@ -22,7 +22,7 @@ public class PlaylistAdapter extends AbsDetailsAdapter<Song, PlaylistAdapter.Son
     private CoverManager mCoverManager;
 
     public PlaylistAdapter(Activity activity, List<Song> songs) {
-        super(activity, songs, R.layout.card_song3);
+        super(activity, songs, R.layout.card_song4);
 
         FairPlayerApplication app = (FairPlayerApplication) activity.getApplication();
         mCoverManager = app.getCoverManager();
@@ -49,19 +49,13 @@ public class PlaylistAdapter extends AbsDetailsAdapter<Song, PlaylistAdapter.Son
 
     @Override
     protected void onItemSelected(SongViewHolder viewHolder, int position) {
-        int color = getColor(R.color.primary);
-        viewHolder.mTitleView.setTextColor(color);
         viewHolder.mTitleView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
-        viewHolder.mDurationView.setTextColor(color);
         viewHolder.mDurationView.setTypeface(Typeface.defaultFromStyle(Typeface.BOLD));
     }
 
     @Override
     protected void onItemUnselected(SongViewHolder viewHolder, int position) {
-        int color = getColor(R.color.primary_text);
-        viewHolder.mTitleView.setTextColor(color);
         viewHolder.mTitleView.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
-        viewHolder.mDurationView.setTextColor(color);
         viewHolder.mDurationView.setTypeface(Typeface.defaultFromStyle(Typeface.NORMAL));
     }
 

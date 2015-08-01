@@ -14,23 +14,17 @@ import com.kaleksandrov.smp.ui.img.CoverManager;
 /**
  * Created by kaleksandrov on 5/3/15.
  */
-public class ArtistDetailsAdapter extends AbsDetailsHeaderAdapter<Song, ArtistDetailsAdapter.ArtistViewHolder> {
+public class ArtistDetailsAdapter extends AbsDetailsAdapter<Song, ArtistDetailsAdapter.ArtistViewHolder> {
 
     private Artist mArtist;
     private CoverManager mCoverManager;
 
     public ArtistDetailsAdapter(Activity activity, Artist artist) {
-        super(activity, artist.getSongs(), R.layout.view_artist_details, R.layout.card_song3);
+        super(activity, artist.getSongs(), R.layout.card_song3);
 
         mArtist = artist;
         FairPlayerApplication app = (FairPlayerApplication) activity.getApplication();
         mCoverManager = app.getCoverManager();
-    }
-
-    @Override
-    protected void populateSummaryView(ArtistViewHolder viewHolder) {
-        viewHolder.mTotalDurationView.setText(formatDuration(mArtist.getDuration()));
-        viewHolder.mTrackCountView.setText(Integer.toString(mArtist.getSongs().size()));
     }
 
     @Override
@@ -52,13 +46,8 @@ public class ArtistDetailsAdapter extends AbsDetailsHeaderAdapter<Song, ArtistDe
         return new ArtistViewHolder(view);
     }
 
-    public class ArtistViewHolder extends AbsDetailsHeaderAdapter.DetailsHeaderViewHolder {
+    public class ArtistViewHolder extends AbsDetailsAdapter.DetailsViewHolder {
 
-        // Summary views
-        private TextView mTotalDurationView;
-        private TextView mTrackCountView;
-
-        // Song views
         private ImageView mCoverView;
         private TextView mTitleView;
         private TextView mDurationView;
@@ -66,11 +55,6 @@ public class ArtistDetailsAdapter extends AbsDetailsHeaderAdapter<Song, ArtistDe
         protected ArtistViewHolder(View view) {
             super(view);
 
-            // Summary views
-            mTotalDurationView = (TextView) view.findViewById(R.id.duration);
-            mTrackCountView = (TextView) view.findViewById(R.id.trackCount);
-
-            // Song views
             mCoverView = (ImageView) view.findViewById(R.id.cover);
             mTitleView = (TextView) view.findViewById(R.id.title);
             mDurationView = (TextView) view.findViewById(R.id.duration);
