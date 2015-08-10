@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.kaleksandrov.smp.R;
 import com.kaleksandrov.smp.application.FairPlayerApplication;
@@ -117,7 +118,7 @@ abstract class AbsDetailsActivity extends AppCompatActivity implements AbsDetail
 
     @Override
     public boolean onSupportNavigateUp() {
-        finish();
+        supportFinishAfterTransition();
         return false;
     }
 

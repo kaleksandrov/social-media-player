@@ -3,6 +3,8 @@ package com.kaleksandrov.smp.ui.activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.app.AppCompatActivity;
 
 import com.kaleksandrov.smp.R;
@@ -32,7 +34,9 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             protected void onPostExecute(Void result) {
-                startActivity(new Intent(SplashActivity.this, LibraryActivity.class));
+                ActivityOptionsCompat options = ActivityOptionsCompat
+                        .makeSceneTransitionAnimation(SplashActivity.this);
+                ActivityCompat.startActivity(SplashActivity.this, new Intent(SplashActivity.this, LibraryActivity.class), options.toBundle());
                 finish();
             }
 

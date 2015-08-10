@@ -1,15 +1,21 @@
 package com.kaleksandrov.smp.ui.activity;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.util.Pair;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.transition.Transition;
+import android.transition.TransitionValues;
 import android.view.View;
 
 import com.kaleksandrov.smp.R;
@@ -79,7 +85,7 @@ public class LibraryActivity extends AppCompatActivity implements AbsLibraryAdap
             }
         });
 
-        mPlayAllButton = (FloatingActionButton) findViewById(R.id.play_all);
+        mPlayAllButton = (FloatingActionButton) findViewById(R.id.play);
         mPlayAllButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,7 +148,10 @@ public class LibraryActivity extends AppCompatActivity implements AbsLibraryAdap
             default:
         }
 
-        startActivity(intent);
+        ActivityOptionsCompat options = ActivityOptionsCompat
+                .makeSceneTransitionAnimation(this,
+                        Pair.create(view.findViewById(R.id.avatar), "avatar"));
+        ActivityCompat.startActivity(this, intent, options.toBundle());
     }
 
     /**

@@ -36,7 +36,6 @@ public class AlbumDetailsActivity extends AbsDetailsActivity {
 
         super.onCreate(savedInstanceState);
 
-
         mCoverManager.loadInto(mAlbum.getCoverPath(), mCoverArt);
     }
 
